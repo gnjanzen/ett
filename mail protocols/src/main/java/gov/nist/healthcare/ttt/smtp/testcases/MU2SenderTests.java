@@ -1641,7 +1641,7 @@ public class MU2SenderTests {
                <id>0</id>
                <incoming>true</incoming>
                <outgoing>true</outgoing>
-               <owner>dsdev.sitenv.org</owner>
+               <owner>hit-testing.nist.gov</owner>
                <status></status>
                <thumbprint>193298f2b2b8e83c316fa512c1e481bf7ed37a9a</thumbprint>
                <validEndDate>2026-03-16T17:30:06Z</validEndDate>
