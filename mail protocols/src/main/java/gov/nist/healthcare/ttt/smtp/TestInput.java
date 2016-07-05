@@ -75,6 +75,10 @@ public class TestInput {
 		useTLS = _useTLS;
 	}
 	
+	public TestInput(byte[] cert) {
+		this.certificate = cert;
+	}
+	
 	public String getSutSmtpAddress() {
 		return sutSmtpAddress;
 	}
