@@ -907,6 +907,7 @@ public class SMTPTestRunner implements ISMTPTestRunner {
 
 			TestResult tr142;
 				tr142 = mu2senderTests.testBadAddressSutReceiver(ti);
+			//	tr142 = mu2senderTests.uploadCertificate(ti);
 				tr142.id = 142;
 				res.add(tr142);
 			log.info("*****************   END  Testcase 142 *******************************");
