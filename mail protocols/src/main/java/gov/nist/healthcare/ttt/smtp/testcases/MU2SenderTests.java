@@ -1592,7 +1592,7 @@ public class MU2SenderTests {
 	
 	public TestResult uploadCertificate(TestInput ti) {
 		TestResult tr = new TestResult();
-		
+		tr.setCriteriamet(CriteriaStatus.TRUE);
 
 		try {
 			
@@ -1653,8 +1653,8 @@ public class MU2SenderTests {
   
         
      // read key bytes
-    	FileInputStream fin = new FileInputStream("C:/Users/hit-dev.nist.gov.pem");
-    	FileInputStream fin2 = new FileInputStream("C:/Users/hit-dev.nist.gov.pem");
+    	FileInputStream fin = new FileInputStream("./hit-dev.nist.gov.pem");
+    	FileInputStream fin2 = new FileInputStream("./hit-dev.nist.gov.pem");
     	byte[] targetArray = IOUtils.toByteArray(fin);
 	//	System.out.println(new String(targetArray));
 		
