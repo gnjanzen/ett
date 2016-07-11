@@ -4,7 +4,9 @@ import gov.nist.healthcare.ttt.smtp.TestInput;
 import gov.nist.healthcare.ttt.smtp.TestResult;
 import gov.nist.healthcare.ttt.smtp.TestResult.CriteriaStatus;
 
+import java.io.ByteArrayInputStream;
 import java.io.FileInputStream;
+import java.io.InputStream;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.time.ZonedDateTime;
@@ -1653,18 +1655,19 @@ public class MU2SenderTests {
   
         
      // read key bytes
-    	FileInputStream fin = new FileInputStream("./hit-dev.nist.gov.pem");
-    	FileInputStream fin2 = new FileInputStream("./hit-dev.nist.gov.pem");
-    	byte[] targetArray = IOUtils.toByteArray(fin);
+    //	FileInputStream fin = new FileInputStream("./hit-dev.nist.gov.pem");
+    //	FileInputStream fin2 = new FileInputStream("./hit-dev.nist.gov.pem");
+    //	byte[] targetArray = IOUtils.toByteArray(fin);
 	//	System.out.println(new String(targetArray));
-		
-		String s = new String(targetArray); //replace with cert
+        
+    	InputStream is = new ByteArrayInputStream(cert);
+		String s = new String(cert); //replace with cert
 		String s1 = s.replace("-----BEGIN CERTIFICATE-----","");
 		String s2 = s1.replace("-----END CERTIFICATE-----","");
 		String s3 = s2.replaceAll("\\s+","");
 		
     	CertificateFactory f = CertificateFactory.getInstance("X.509");
-    	X509Certificate certificate = (X509Certificate)f.generateCertificate(fin2);
+    	X509Certificate certificate = (X509Certificate)f.generateCertificate(is);
     //	System.out.println(certificate);
     	
     	String thumbPrint = DigestUtils.sha1Hex(certificate.getEncoded());
